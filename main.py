@@ -49,10 +49,13 @@ def main(number: int):
     seznam_pridavnych_jmen: list[str] = [
         w for w in seznam if re.search("(í|ý)$", w)
         and not re.search("(a|á|e|ě)ní$", w)
-        and not re.search("emí$", w)]
+        and not re.search("emí$", w)
+        and not re.search("ství$", w)
+        and not re.search("tí$", w)
+        and not re.search("tví$", w)]
     seznam_podstatnych_jmen: list[str] = [
         w for w in seznam if re.search("(a|á|e|é|i|í|o|ó|u|ů)k$", w)
-        or re.search("o(n|ň)$", w)]
+        or re.search("o(n|ň)$", w) or re.search("(u|ů)(n|ň)$", w)]
 
     for _ in range(number):
         pridavne: str = random.choice(seznam_pridavnych_jmen)
