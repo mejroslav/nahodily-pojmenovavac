@@ -1,6 +1,6 @@
 # Nahodilý Pojmenovávač
 
-Tento skript generuje náhodné dvojice 'přídavné jméno' + podstatné jméno.
+Tento skript generuje náhodné dvojice 'přídavné jméno' + 'podstatné jméno'.
 
 ## Usage
 
