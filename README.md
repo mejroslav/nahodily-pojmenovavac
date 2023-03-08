@@ -21,8 +21,22 @@ osmadvacetiletý dubček
 ```
 
 ```shell
+foo@bar~$ python3 main.py -n 3 -u
+dvoubrankový_vozíček
+žulový_kotník
+rozebraný_deníček
+```
+
+```shell
 foo@bar~$ python3 main.py -n 3 -d
-veleuspesny_pokladnik
-jednostranny_burton
-nakladny_zlomek
+slovesny navstevnik
+breclavsky slavik
+breclavsky korinek
+```
+
+```shell
+foo@bar~$ python3 main.py -n 3 -du
+obsahly_prohresek
+kutnohorsky_usudek
+zanikly_opasek
 ```
