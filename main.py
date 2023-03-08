@@ -30,12 +30,11 @@ translation_table = {
 
 def remove_diacritics(s: str) -> str:
     """Remove hooks and dashes from a word or letter."""
-    return s.translate(translation_table)
+    return s.upper().translate(translation_table).lower()
 
 
 def merge_with_underscore(str1, str2):
-    return remove_diacritics(str1.upper()).lower() + \
-        "_" + remove_diacritics(str2.upper()).lower()
+    return str1 + "_" + str2
 
 
 def main(number: int):
@@ -61,6 +60,8 @@ def main(number: int):
         pridavne: str = random.choice(seznam_pridavnych_jmen)
         podstatne: str = random.choice(seznam_podstatnych_jmen)
         if options.diacritics:
+            pridavne, podstatne = remove_diacritics(pridavne), remove_diacritics(podstatne)
+        if options.underscore:
             nahodne_slovo = merge_with_underscore(pridavne, podstatne)
         else:
             nahodne_slovo = pridavne.lower() + " " + podstatne.lower()
@@ -76,7 +77,12 @@ if __name__ == '__main__':
                       action="store_true",
                       dest='diacritics',
                       default=False,
-                      help='remove diacritics and merge it with underscore')
+                      help='remove diacritics')
+    parser.add_option('-u',
+                      action="store_true",
+                      dest='underscore',
+                      default=False,
+                      help='merge it with underscore')
     (options, args) = parser.parse_args()
     number = options.number if options.number is not None else 1
     main(number)
