@@ -6,7 +6,8 @@ Tento skript generuje náhodné dvojice 'přídavné jméno' + podstatné jméno
 
 **Flags**:
 - `-n int` - generuje daný počet dvojic
-- `-d` - generuje bez diakritiky, ve tvaru `podstatne_pridavne`
+- `-d` - generuje bez diakritiky
+- `-u` - generuje ve tvaru `podstatne_pridavne`
 
 ```shell
 foo@bar~$ python3 main.py
